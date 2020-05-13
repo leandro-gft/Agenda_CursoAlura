@@ -2,6 +2,7 @@ package br.com.gft.agenda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -15,6 +16,8 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.gft.agenda.dao.AlunoDao;
+
 public class CadastroActivity extends AppCompatActivity {
 
     @Override
@@ -24,6 +27,7 @@ public class CadastroActivity extends AppCompatActivity {
 
         setTitle("Novo Aluno");
 
+        final AlunoDao dao = new AlunoDao();
         final EditText etEmail = findViewById(R.id.et__activity_cadastro_email);
         final EditText etNome = findViewById(R.id.et__activity_cadastro_nome);
         final EditText etPhone = findViewById(R.id.et__activity_cadastro_phone);
@@ -37,8 +41,9 @@ public class CadastroActivity extends AppCompatActivity {
                 String phone = etPhone.getText().toString();
 
                 Aluno aluno = new Aluno(nome, email, phone);
-                Toast.makeText(CadastroActivity.this, aluno.getNome() +" - "+ aluno.getEmail() +" - "+ aluno.getPhone(), Toast.LENGTH_SHORT).show();
-
+                dao.salvar(aluno);
+                startActivity(new Intent(CadastroActivity.this, MainActivity.class
+                ));
             }
         });
 

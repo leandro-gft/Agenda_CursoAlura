@@ -1,5 +1,7 @@
 package br.com.gft.agenda;
 
+import androidx.annotation.NonNull;
+
 public class Aluno {
 
     private String nome;
@@ -34,5 +36,11 @@ public class Aluno {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return nome;
     }
 }

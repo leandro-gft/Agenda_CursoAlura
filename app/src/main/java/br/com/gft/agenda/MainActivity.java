@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import br.com.gft.agenda.dao.AlunoDao;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -24,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Lista de Alunos");
 
-//        ListView listaAlunos = findViewById(R.id.lvAlunos);
-//
-//        List<String> alunos = new ArrayList<>(Arrays.asList("Alex", "Fran", "Jose", "Leandro", "Ana"));
-//
-//        listaAlunos.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, alunos));
+        ListView listaAlunos = findViewById(R.id.lvAlunos);
+
+        AlunoDao dao = new AlunoDao();
+
+        listaAlunos.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dao.todos()));
     }
 
     public void telaCadastro (View v){
