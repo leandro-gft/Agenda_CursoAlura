@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Lista de Alunos");
 
-        ListView listaAlunos = findViewById(R.id.lvAlunos);
-
-        List<String> alunos = new ArrayList<>(Arrays.asList("Alex", "Fran", "Jose", "Leandro", "Ana"));
-
-        listaAlunos.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, alunos));
+//        ListView listaAlunos = findViewById(R.id.lvAlunos);
+//
+//        List<String> alunos = new ArrayList<>(Arrays.asList("Alex", "Fran", "Jose", "Leandro", "Ana"));
+//
+//        listaAlunos.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, alunos));
     }
 
     public void telaCadastro (View v){
