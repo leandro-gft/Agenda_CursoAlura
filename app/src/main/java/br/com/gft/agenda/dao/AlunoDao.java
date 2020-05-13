@@ -1,15 +1,11 @@
 package br.com.gft.agenda.dao;
 
-import androidx.annotation.NonNull;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.gft.agenda.Aluno;
+import br.com.gft.agenda.model.Aluno;
 
 public class AlunoDao {
-
-
 
     private final static List<Aluno> alunos = new ArrayList<>();
 
