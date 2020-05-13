@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("Lista de Alunos");
 
         ListView listaAlunos = findViewById(R.id.lvAlunos);
 
