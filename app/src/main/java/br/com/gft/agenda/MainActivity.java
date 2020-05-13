@@ -2,7 +2,9 @@ package br.com.gft.agenda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
         List<String> alunos = new ArrayList<>(Arrays.asList("Alex", "Fran", "Jose", "Leandro", "Ana"));
 
         listaAlunos.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, alunos));
+    }
 
-
-
+    public void telaCadastro (View v){
+        startActivity(new Intent(this, CadastroActivity.class));
     }
 }
